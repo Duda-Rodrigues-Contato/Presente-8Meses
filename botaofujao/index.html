@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão Fujão</title>
+
+    <style>
+        
+        body {
+            background-color: pink;
+        }
+
+        .painel {
+            margin: auto;
+            margin-top: 100px;
+            background-color: whitesmoke;
+            width: 500px;
+            height: 500px;
+            border-radius: 15px;
+            text-align: center;
+            padding-top: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #btn-sim {
+            height: 35px;
+            width: 60px;
+            background-color: palevioletred;
+            border: transparent;
+            border-radius: 10px;
+            color: white;
+            margin-left: -50px;
+        }
+
+        #btn-nao {
+            position: absolute;
+            height: 35px;
+            width: 60px;
+            background-color: palevioletred;
+            border: transparent;
+            border-radius: 10px;
+            color: white;
+            margin-left: 10px;
+        }
+
+        .btns {
+            padding-top: 10px;
+        }
+
+        img {
+            padding-top: 15px;
+            width: 350px;
+            height: 250px;
+        }
+
+        h4 {
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="painel">
+        <h1>Feliz 8 meses, amor!</h1>
+
+        <img src="https://i.pinimg.com/originals/a1/b3/b1/a1b3b1492a379333ea53b0f795eaf86f.gif" alt="">
+        
+        <h4>Aceita passar a  vida comigo?</h4>
+
+        <div class="btns">
+            <a href="boatoSim.html"><button id="btn-sim"> SIM </button></a>
+            <button onmouseover="fuja()" id="btn-nao"> NÃO </button>
+        </div>
+    </div>
+
+    <script>
+        function fuja() {
+            var botaoNao = document.getElementById("btn-nao");
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoNao.offsetWidth; // Largura máxima
+            var maxY = alturaJanela - botaoNao.offsetHeight; // Altura máxima
+
+            var aleatX = Math.floor(Math.random() * maxX);
+            var aleatY = Math.floor(Math.random() * maxY);
+
+            botaoNao.style.left = aleatX + "px";
+            botaoNao.style.top =  aleatY + "px";
+
+        }
+
+    </script>
+
+</body>
+</html>
